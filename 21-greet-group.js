@@ -9,20 +9,28 @@ var exclaim = R.concat(R.__, '!');
 
 var sayHello = R.pipe(greet, exclaim);
 
+function greetGroup(list) {
+    var out = [];
+    for(var i = 0; i < list.length; i++) {
+        out.push(sayHello(list[i].firstName));
+    }
+    return out.join('\n');
+}
+log(  greetGroup(group)  );
+
+
+
 var greetGroup = R.pipe(
     R.map(R.prop('firstName')),
     R.map(sayHello),
     R.join('\n')
 );
-
-
 log( greetGroup(group)  );
 
 
 
 var greetGroup = list => list
-    .map(v => v.firstName)
+    .map(R.prop('firstName'))
     .map(sayHello)
     .join('\n');
-
 log(  greetGroup(group)  );
