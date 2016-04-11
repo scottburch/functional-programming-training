@@ -1,3 +1,8 @@
+/**********************
+ * Currying and partially applied functions
+ */
+
+
 var log = require('./log');
 
 function add(a) {
