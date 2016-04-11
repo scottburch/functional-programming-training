@@ -16,3 +16,6 @@ log(  queryString({foo:'bar',baz:'boo'})  );
 log(  queryString(  {foo:undefined, baz:0})  );
 
 log( queryString()  );
+
+log(  queryString({})  );
+

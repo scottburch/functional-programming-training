@@ -30,7 +30,7 @@ log( greetGroup(group)  );
 
 
 var greetGroup = list => list
-    .map(R.prop('firstName'))
+    .map(o => o.firstName)
     .map(sayHello)
     .join('\n');
 log(  greetGroup(group)  );
