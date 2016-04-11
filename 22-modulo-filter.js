@@ -1,9 +1,7 @@
 var log = require('./log');
 var R = require('ramda');
 
-var modulo = R.curry((divisor, dividend) => dividend % divisor);
-
-var isOdd = modulo(2);
+var isOdd = R.modulo(R.__, 2);
 
 var getOdds = R.filter(isOdd);
 
