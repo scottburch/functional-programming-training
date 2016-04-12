@@ -2,7 +2,7 @@ var log = require('./log');
 var R = require('ramda');
 
 var getUsers = () =>
-    new Promise(resolve => setTimeout(() => resolve([{username: 'Scott'}])));
+    new Promise(resolve => setTimeout(() => resolve([{username: 'Scott'}, {username: 'Jim'}])));
 
 var storeUsers = users =>
     new Promise(resolve => setTimeout(() => resolve(users)));
