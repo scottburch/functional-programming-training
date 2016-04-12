@@ -2,10 +2,10 @@ var log = require('./log');
 var R = require('ramda');
 
 var getUsers = () =>
-    new Promise(resolve => setTimeout(R.partial(resolve, [[{username: 'Scott'}]])));
+    new Promise(resolve => setTimeout(() => resolve([{username: 'Scott'}])));
 
 var storeUsers = users =>
-    new Promise(resolve => setTimeout(R.partial(resolve, [users])));
+    new Promise(resolve => setTimeout(() => resolve(users)));
 
 var usernameLens = R.lens(R.prop('username'), R.assoc('username'));
 
