@@ -7,9 +7,9 @@ var getUsers = () =>
 var storeUsers = users =>
     new Promise(resolve => setTimeout(() => resolve(users)));
 
-var usernameLens = R.lens(R.prop('username'), R.assoc('username'));
+var standardLens = prop => R.lens(R.prop(prop), R.assoc(prop));
 
-var uppercaseUsername = R.over(usernameLens, R.toUpper);
+var uppercaseUsername = R.over(standardLens('username'), R.toUpper);
 
 
 getUsers()
