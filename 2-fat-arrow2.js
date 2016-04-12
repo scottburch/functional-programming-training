@@ -2,7 +2,7 @@ var log = require('./log');
 
 function speak() {
     log(this.sound);
-}
+};
 
 var speak2 = () => log(this.sound);
 
