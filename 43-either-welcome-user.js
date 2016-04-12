@@ -24,7 +24,20 @@ M.Either.of(user)
 
 
 // Provides alternative message
-M.Either.of(user)
+M.Maybe.of(user).toEither()
     .map(welcomeUser)
     .orElse(R.always('Please log in'))
     .map(log);
+
+
+var fmap = R.curry((fn, monad) => monad.map(fn));
+var orElse = R.curry((fn, monad) => monad.orElse(fn));
+
+var welcomeOrLogin = R.pipe(
+    M.Either.of,
+    fmap(welcomeUser),
+    orElse(R.always('Please log in')),
+    fmap(log)
+);
+
+welcomeOrLogin(user);
