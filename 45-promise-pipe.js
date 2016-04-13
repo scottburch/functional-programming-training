@@ -13,6 +13,14 @@ var async2 = x => new Promise(
     resolve => setTimeout(() => resolve(`${x}:async2`))
 );
 
+async1()
+    .then(sync1)
+    .then(sync2)
+    .then(async2)
+    .then(log);
+
+
+
 var doAll = R.pipeP(async1, sync1, sync2, async2);
 
 doAll().then(log);

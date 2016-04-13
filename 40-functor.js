@@ -19,5 +19,5 @@ y.map(add1).map(add1).map(log);
 
 
 var aString = x => ({map: fn => aString(fn(x))});
-y = aString('')
+y = aString('');
 y.map(add1).map(add1).map(log);
